@@ -1,5 +1,7 @@
 // Mark as read button
 
+import { toast } from "react-toastify";
+
 const getStoredReadList = () =>{
     // readList 
     const storedListStr = localStorage.getItem('read-list');
@@ -23,6 +25,7 @@ const addToStoredReadList = (id) =>{
         storedList.push(id);
         const storedListString = JSON.stringify(storedList); 
         localStorage.setItem('read-list', storedListString);
+        toast('this book is added to your read list');
     }
 };
 
@@ -50,9 +53,10 @@ const addStoredWishList = (id) =>{
         wishListData.push(id);
         const storedWishListToString = JSON.stringify(wishListData);
         localStorage.setItem('wish-list', storedWishListToString);
+        toast('this book is added to your wish list');
     }
 }
 
 
 
-export {addToStoredReadList, addStoredWishList};
+export {addToStoredReadList, addStoredWishList, getStoredReadList};
