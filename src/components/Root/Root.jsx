@@ -1,7 +1,14 @@
+import { Outlet } from "react-router-dom";
+import Footer from "../Footer/Footer";
+import Navbar from "../NavBar/Navbar";
+
 const Root = () => {
     return (
         <div>
-            <h2 className="text-2xl">My name is shawon</h2>
+            <Navbar></Navbar>
+            {/* we will use outlet. for all the dynamic things that we will add through different section*/}
+            <Outlet></Outlet>
+            <Footer></Footer>
         </div>
     );
 };
